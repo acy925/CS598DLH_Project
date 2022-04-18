@@ -6,7 +6,7 @@ This repository is for UIUC CS598DLH Project
 The content of this repository can be divided into two parts:
 
 - Tools for build benchmark dataset to get the in-hospital-mortality data.
-- The reproduced model of Concare .
+- The reproduced model of ConCare.
 
 ## Requirements
 
@@ -31,7 +31,7 @@ The source code is from https://github.com/YerevaNN/mimic3-benchmarks/, below ar
    cd mimic3-benchmarks/
    ```
 
-2. This command will generates one directory per patient and writes ICU stay information to *data/{SUBJECT_ID}/stays.csv*, diagnose to *data/{SUBJECT_ID}/diagnoses.csv*, and events to *data/{SUBJECT_ID}/events.csv*.
+2. This command will generates one directory per patient and writes ICU stay information to `data/{SUBJECT_ID}/stays.csv`, diagnose to `data/{SUBJECT_ID}/diagnoses.csv`, and events to `data/{SUBJECT_ID}/events.csv`.
 
    There will be 33,798 patients, 42,276 ICU stays and 253,116,883 events.
 
@@ -47,7 +47,7 @@ The source code is from https://github.com/YerevaNN/mimic3-benchmarks/, below ar
    python -m mimic3benchmark.scripts.validate_events data/root/
    ```
 
-4. The next command breaks up per-subject data into separate episodes (pertaining to ICU stays). Time series of events are stored in *{SUBJECT_ID}/episode{#}_timeseries.csv* (where # counts distinct episodes) while episode-level information (patient age, gender, ethnicity, height, weight) and outcomes (mortality, length of stay, diagnoses) are stores in *{SUBJECT_ID}/episode{#}.csv*. 
+4. The next command breaks up per-subject data into separate episodes (pertaining to ICU stays). Time series of events are stored in `{SUBJECT_ID}/episode{#}_timeseries.csv` (where # counts distinct episodes) while episode-level information (patient age, gender, ethnicity, height, weight) and outcomes (mortality, length of stay, diagnoses) are stores in `{SUBJECT_ID}/episode{#}.csv`. 
 
    This script requires two files, one that maps event ITEMIDs to clinical variables and another that defines valid ranges for clinical variables (for detecting outliers, etc.). Outlier detection is disabled in the current version.
 
@@ -75,7 +75,7 @@ The source code is from https://github.com/YerevaNN/mimic3-benchmarks/, below ar
 
 7. This command will generate the validation data set from the training set. 
 
-   And you will get three csv files, which is test_listfile.csv, train_listfile.csv, and val_listfile.csv. Finally, There will be 3237 samples in the test set, 3223 samples in validation set, and 14682 samples in training set.
+   And you will get three csv files, which is `test_listfile.csv`, `train_listfile.csv`, and `val_listfile.csv`. Finally, There will be 3237 samples in the test set, 3223 samples in validation set, and 14682 samples in training set.
 
    ```
    python -m mimic3models.split_train_val {dataset-directory}
@@ -87,4 +87,4 @@ After getting the in-hospital mortality dataset, save the files in `in-hospital-
 
 The source code is from https://github.com/Accountable-Machine-Intelligence/ConCare.
 
-For running the ConCare model,  I run it on the Google Colab.
+For running the ConCare model,  run the `concare_notebook.ipynb` on the Google Colab.
