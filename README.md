@@ -26,7 +26,7 @@ The source code is from https://github.com/YerevaNN/mimic3-benchmarks/, below ar
 
 1. Clone the repo.
 
-   ```python
+   ```
    git clone https://github.com/YerevaNN/mimic3-benchmarks/
    cd mimic3-benchmarks/
    ```
@@ -35,7 +35,7 @@ The source code is from https://github.com/YerevaNN/mimic3-benchmarks/, below ar
 
    There will be 33,798 patients, 42,276 ICU stays and 253,116,883 events.
 
-   ```python
+   ```
    python -m mimic3benchmark.scripts.extract_subjects {PATH TO MIMIC-III CSVs} data/root/
    ```
 
@@ -43,7 +43,7 @@ The source code is from https://github.com/YerevaNN/mimic3-benchmarks/, below ar
 
    There will be 208,572,237 events left, the number of patients and ICU stays remain the same.
 
-   ```python
+   ```
    python -m mimic3benchmark.scripts.validate_events data/root/
    ```
 
