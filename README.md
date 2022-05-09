@@ -33,6 +33,7 @@ For the reproduced ConCare model, the train and test on the Google Colab.
 ## Instructions for build benchmark dataset to get the in-hospital-mortality data
 
 The MIMIC-III data is down load from https://physionet.org/.
+
 The demographic data is down load from https://github.com/Accountable-Machine-Intelligence/ConCare.
 
 Below are the steps for preprocessing the In-hospital mortality dataset.
