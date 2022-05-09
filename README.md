@@ -3,15 +3,15 @@ This repository is for UIUC CS598DLH Project
 
 ## Citation
 
-```
+
 The reproduce project is based on the paper, "Ma, Liantao, et al. ”Concare: Personalized clinical feature embedding via capturing the healthcare context.” Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 34. No. 01. 2020.
-```
+
 
 The link to this paper's repo is: https://github.com/Accountable-Machine-Intelligence/ConCare.
 
-```
+
 The data processing is based on the paper, "Harutyunyan, H.; Khachatrian,H.; Kale, D. C.; and Galstyan, A. 2017. Multitask learning and benchmarking with clinical time series data. arXiv preprint arXiv:1703.07771."
-```
+
 
 The link to this paper's repo is: https://github.com/YerevaNN/mimic3-benchmarks/.
 
