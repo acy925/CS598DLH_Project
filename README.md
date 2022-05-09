@@ -110,7 +110,7 @@ For the baseline model of GRU, in the `Concare` directory, run the `concare_GRU_
 
 For the ablation experiments of GRU, in the `Concare` directory, run the `concare_ab_notebook.ipynb` on the Google Colab.
 
-For the training the ConCare model for predicting the Length-of-stay, following the data preprocessing part above to get the  `length-of-stay` directory, then save the files in `length-of-stay` directory to `Concare_LOS/data/` directory, run the `concare_los_notebook.ipynb` on the Google Colab.
+For the training the ConCare model for predicting the Length-of-stay, following the data preprocessing part above to get the  `length-of-stay` directory, then save the files in `length-of-stay` directory to `Concare_LOS/data/` directory, run the `concare_los_notebook.ipynb` on the Google Colab. Due to memory limit, the code can't work.
 
 
 ## The result of the reproduced model and original models
