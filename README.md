@@ -1,12 +1,24 @@
 # CS598DLH_Project
 This repository is for UIUC CS598DLH Project
 
+## Citation
+
+The reproduce project is based on the paper, "Ma, Liantao, et al. ”Concare: Personalized clinical feature embedding via capturing the healthcare context.” Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 34. No. 01. 2020.
+
+The link to this paper's repo is: https://github.com/Accountable-Machine-Intelligence/ConCare.
+
+The data processing is based on the paper, "Harutyunyan, H.; Khachatrian,H.; Kale, D. C.; and Galstyan, A. 2017. Multitask learning and benchmarking with clinical time series data. arXiv preprint arXiv:1703.07771."
+
+The link to this paper's repo is: https://github.com/YerevaNN/mimic3-benchmarks/.
+
+
 ## Structure
 
 The content of this repository can be divided into two parts:
 
-- Tools for build benchmark dataset to get the in-hospital-mortality data.
-- The reproduced model of ConCare.
+- Instructions for build benchmark dataset to get the in-hospital-mortality data, including the data download instructions and preprocessing codes.
+- The reproduced model of ConCare, including the training and evaluation codes.
+- The result of the project.
 
 ## Requirements
 
@@ -16,13 +28,14 @@ For the data pre-processing, the following package will be used:
 - pyyaml==5.4.1
 - numpy==1.16.5
 
-For the ConCare model, the train and test on the Google Colab.
+For the reproduced ConCare model, the train and test on the Google Colab.
 
-## Building the in-hospital-mortality data set
+## Instructions for build benchmark dataset to get the in-hospital-mortality data
 
-The MIMIC-III data is from https://physionet.org/
+The MIMIC-III data is down load from https://physionet.org/.
+The demographic data is down load from https://github.com/Accountable-Machine-Intelligence/ConCare.
 
-The source code is from https://github.com/YerevaNN/mimic3-benchmarks/, below are the steps.
+Below are the steps for preprocessing the In-hospital mortality dataset.
 
 1. Clone the repo.
 
@@ -85,6 +98,30 @@ After getting the in-hospital mortality dataset, save the files in `in-hospital-
 
 ## Train and test ConCare
 
-The source code is from https://github.com/Accountable-Machine-Intelligence/ConCare.
 
-For running the ConCare model,  run the `concare_notebook.ipynb` on the Google Colab.
+For training the ConCare model, in the `Concare` directory, run the `concare_notebook.ipynb` on the Google Colab.
+
+For the baseline model of GRU, in the `Concare` directory, run the `concare_GRU_notebook.ipynb` on the Google Colab.
+
+For the ablation experiments of GRU, in the `Concare` directory, run the `concare_ab_notebook.ipynb` on the Google Colab.
+
+For the training the ConCare model for predicting the Length-of-stay, following the data preprocessing part above to get the  `length-of-stay` directory, then save the files in `length-of-stay` directory to `LOS/data/` directory, run the `concare_los_notebook.ipynb` on the Google Colab.
+
+
+## The result of the reproduced model and original models
+
+| Methods               | AUROC         | AUPRC         | min(Se, P+)   |
+| --------------------- | ------------- | ------------- | ------------- |
+| GRU                   | .8628(.011)    | .4989(.022)   | .5026(.028)   |
+| CRETAIN               | .8313(.014)    | .4790(.020)   | .4721(.022)   |
+| MCA-RNN               | .8587(.013)    | .5003(.028)   | .4932(.024)   |
+| T-LSTM                | .8617(.014)    | .4964(.022)   | .4977(.029)   |
+| Transformere          | .8535(.014)    | .4917(.022)   | .5000(.019)   |
+| SAnD                  | .8382(.007)    | .4545(.018)   | .4845(.017)   |
+| ConCare               | .8702(.008)    | .5317(.027)   | .5082(.021)   |
+| ConCare PE            | .8566(.008)    | .4811(.024)   | .5012(.020)   |
+| ConCare DE-           | .8671(.009)    | .5231(.028)   | .5080(.023)   |
+| Reproduce GRU         | .8605(.009)    | .4928(.028)   | .4971(.027)   |
+| Reproduce ConCare     | .8709(.009)    | .5310(.027)   | .5196(.022)   |
+| Reproduce ConCare PE  | .8560(.009)    | .4805(.024)   | .5006(.024)   |
+| Reproduce ConCare DE- | .8669(.009)    | .5228(.027)   | .5079(.022)   |
